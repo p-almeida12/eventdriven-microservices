@@ -131,7 +131,7 @@ public class KafkaAdminClient {
      * Checks if the retry count has exceeded the maximum allowed retries.
      * Throws KafkaClientException if the retry count exceeds the configured limit.
      *
-     * @param retry the current retry count.
+     * @param retry    the current retry count.
      * @param maxRetry the maximum allowed retry count.
      */
     private void checkMaxRetry(int retry, Integer maxRetry) {
@@ -143,7 +143,7 @@ public class KafkaAdminClient {
     /**
      * Checks if a specific topic exists within a collection of TopicListings.
      *
-     * @param topics the collection of existing topics.
+     * @param topics    the collection of existing topics.
      * @param topicName the name of the topic to check.
      * @return true if the topic is found; false otherwise.
      */
@@ -195,7 +195,7 @@ public class KafkaAdminClient {
      *
      * @param retryContext the context for the current retry operation.
      * @return Collection of TopicListing objects representing the Kafka topics.
-     * @throws ExecutionException if the topic listing fails to execute.
+     * @throws ExecutionException   if the topic listing fails to execute.
      * @throws InterruptedException if the operation is interrupted.
      */
     private Collection<TopicListing> doGetTopics(RetryContext retryContext)
