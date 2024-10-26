@@ -1,0 +1,6 @@
+#common network driver type
+version: '3.7'
+
+networks:
+  application:
+    driver: bridge #netowrk to connect with hostnames
