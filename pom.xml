@@ -15,6 +15,7 @@
 	<description>A microservices-based, event-driven application built with Spring that streams, processes, and analyzes real-time tweets from X.</description>
 	<modules>
 		<module>twitter-to-kafka-service</module>
+		<module>app-config-data</module>
 	</modules>
 	<packaging>pom</packaging>
 	<url/>
@@ -40,6 +41,11 @@
 
 	<dependencyManagement>
 		<dependencies>
+			<dependency>
+				<groupId>com.microservices</groupId>
+				<artifactId>app-config-data</artifactId>
+				<version>${project.version}</version>
+			</dependency>
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-starter</artifactId>
