@@ -16,6 +16,7 @@
 	<modules>
 		<module>twitter-to-kafka-service</module>
 		<module>app-config-data</module>
+		<module>common-config</module>
 		<module>kafka</module>
 	</modules>
 	<packaging>pom</packaging>
@@ -119,6 +120,16 @@
 			<dependency>
 				<groupId>com.microservices</groupId>
 				<artifactId>kafka-model</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.microservices</groupId>
+				<artifactId>kafka-admin</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.microservices</groupId>
+				<artifactId>kafka-producer</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 
