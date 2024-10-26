@@ -1,6 +1,5 @@
 version: '3.7'
 services:
-  # organization of kafka cluster, cluster health and leader election
   zookeeper:
     image: confluentinc/cp-zookeeper:${KAFKA_VERSION:-latest}
     hostname: zookeeper
@@ -15,8 +14,6 @@ services:
       ZOOKEEPER_SERVERS: zookeeper:2888:3888
     networks:
       - ${GLOBAL_NETWORK:-kafka}
-
-  #register a schema for a kafka topic - check producers and consumers to force the registered schema
   schema-registry:
     image: confluentinc/cp-schema-registry:${KAFKA_VERSION}
     hostname: schema-registry
@@ -34,8 +31,6 @@ services:
       SCHEMA_REGISTRY_DEBUG: 'true'
     networks:
       - ${GLOBAL_NETWORK:-kafka}
-
-  ## kafka brokers - use the same Kafka image with different ports - quorum concept - one node is not enough to create a network
   kafka-broker-1:
     image: confluentinc/cp-kafka:${KAFKA_VERSION}
     hostname: kafka-broker-1
