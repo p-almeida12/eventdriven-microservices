@@ -16,10 +16,10 @@ spring:
           uri: https://github.com/p-almeida12/spring-cloud-config-server-repository
           default-label: main
           clone-on-start: true
-          username: ****
-          password: ****
+          username: p-almeida12
+          password: '{cipher}a26424bb3e0a9a92a4557d10aee4fc0a368e804cbcac9288153b7a25fd0c9cc46ccbab1f084fcf3849f23cba4cde982036aece6f546c4281135fe67976f53c3e'
       fail-fast: true
     security:
         user:
             name: spring_cloud_user
-            password: spring
+            password: '{cipher}e1a02d66d1b9329d216faf73c3955f0fcbc27fc742402eafe72a68e90b45d5e6'
