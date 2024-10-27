@@ -16,4 +16,18 @@ kcat -L -b localhost:19092
 kcat -C -b localhost:19092 -t twitter-topic
 ```
 
+## SET AS ENVIRONMENT VARIABLE
+```shell
+export ENCRYPT_KEY='insert_key_here'
+```
 
+```shell
+echo $ENCRYPT_KEY    
+```
+
+```shell
+spring encrypt something --key 'insert_key_here'
+``` 
+```shell
+spring decrypt something_encrypted --key 'insert_key_here'
+``` 
