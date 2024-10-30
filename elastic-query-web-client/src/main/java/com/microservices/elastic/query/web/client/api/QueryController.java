@@ -2,6 +2,8 @@ package com.microservices.elastic.query.web.client.api;
 
 import com.microservices.elastic.query.web.client.model.ElasticQueryWebClientRequestModel;
 import com.microservices.elastic.query.web.client.model.ElasticQueryWebClientResponseModel;
+import com.microservices.elastic.query.web.client.service.ElasticQueryWebClient;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,7 +16,10 @@ import java.util.List;
 
 @Slf4j
 @Controller
+@RequiredArgsConstructor
 public class QueryController {
+
+    private final ElasticQueryWebClient elasticQueryWebClient;
 
     @GetMapping
     public String index() {
@@ -37,11 +42,7 @@ public class QueryController {
     public String queryByText(@Valid ElasticQueryWebClientRequestModel requestModel,
                               Model model) {
         log.info("Querying with text {}", requestModel.getText());
-        List<ElasticQueryWebClientResponseModel> responseModels = new ArrayList<>();
-        responseModels.add(ElasticQueryWebClientResponseModel.builder()
-                .id("1")
-                .text(requestModel.getText())
-                .build());
+        List<ElasticQueryWebClientResponseModel> responseModels = elasticQueryWebClient.getByText(requestModel);
         model.addAttribute("elasticQueryWebClientResponseModels", responseModels);
         model.addAttribute("searchText", requestModel.getText());
         model.addAttribute("elasticQueryWebClientRequestModel",

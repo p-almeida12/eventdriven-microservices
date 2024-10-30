@@ -19,11 +19,15 @@ import reactor.netty.tcp.TcpClient;
 import java.util.concurrent.TimeUnit;
 
 @Configuration
-@RequiredArgsConstructor
 public class WebClientConfig {
 
     private final ElasticQueryWebClientConfigData.WebClient elasticQueryWebClientConfigData;
     private final UserConfigData userConfigData;
+
+    public WebClientConfig(ElasticQueryWebClientConfigData webClientConfigData, UserConfigData userData) {
+        this.elasticQueryWebClientConfigData = webClientConfigData.getWebClient();
+        this.userConfigData = userData;
+    }
 
     @LoadBalanced
     @Bean("webClientBuilder")
