@@ -31,3 +31,6 @@ spring encrypt something --key 'insert_key_here'
 ```shell
 spring decrypt something_encrypted --key 'insert_key_here'
 ``` 
+
+http://localhost:8183/elastic-query-service/api-docs
+http://localhost:8183/elastic-query-service/swagger-ui/index.html?configUrl=/elastic-query-service/api-docs/swagger-config
