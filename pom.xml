@@ -55,6 +55,7 @@
 		<spring-cloud.version>3.0.2</spring-cloud.version>
 		<spring-cloud-dependencies.version>2020.0.2</spring-cloud-dependencies.version>
 		<elastic.version>7.9.1</elastic.version>
+		<springdoc-openapi-ui.version>1.5.9</springdoc-openapi-ui.version>
 	</properties>
 
 	<repositories>
@@ -66,6 +67,11 @@
 
 	<dependencyManagement>
 		<dependencies>
+			<dependency>
+				<groupId>org.springdoc</groupId>
+				<artifactId>springdoc-openapi-ui</artifactId>
+				<version>${springdoc-openapi-ui.version}</version>
+			</dependency>
 			<dependency>
 				<groupId>com.microservices</groupId>
 				<artifactId>elastic-query-client</artifactId>
