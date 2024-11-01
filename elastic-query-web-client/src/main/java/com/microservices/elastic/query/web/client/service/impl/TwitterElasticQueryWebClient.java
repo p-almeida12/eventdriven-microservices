@@ -1,14 +1,11 @@
 package com.microservices.elastic.query.web.client.service.impl;
 
 import com.microservices.config.ElasticQueryWebClientConfigData;
-import com.microservices.elastic.query.web.client.exception.ElasticQueryWebClientException;
-import com.microservices.elastic.query.web.client.model.ElasticQueryWebClientRequestModel;
-import com.microservices.elastic.query.web.client.model.ElasticQueryWebClientResponseModel;
+import com.microservices.elastic.query.web.client.common.exception.ElasticQueryWebClientException;
+import com.microservices.elastic.query.web.client.common.model.ElasticQueryWebClientRequestModel;
+import com.microservices.elastic.query.web.client.common.model.ElasticQueryWebClientResponseModel;
 import com.microservices.elastic.query.web.client.service.ElasticQueryWebClient;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;

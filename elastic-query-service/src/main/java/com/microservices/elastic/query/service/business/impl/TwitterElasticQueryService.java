@@ -3,7 +3,7 @@ package com.microservices.elastic.query.service.business.impl;
 import com.microservices.elastic.model.index.impl.TwitterIndexModel;
 import com.microservices.elastic.query.client.service.ElasticQueryClient;
 import com.microservices.elastic.query.service.business.ElasticQueryService;
-import com.microservices.elastic.query.service.model.ElasticQueryServiceResponseModel;
+import com.microservices.elastic.query.service.common.model.ElasticQueryServiceResponseModel;
 import com.microservices.elastic.query.service.model.assembler.ElasticQueryServiceResponseModelAssembler;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

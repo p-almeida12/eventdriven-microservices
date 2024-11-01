@@ -1,7 +1,7 @@
 package com.microservices.elastic.query.web.client.api;
 
-import com.microservices.elastic.query.web.client.model.ElasticQueryWebClientRequestModel;
-import com.microservices.elastic.query.web.client.model.ElasticQueryWebClientResponseModel;
+import com.microservices.elastic.query.web.client.common.model.ElasticQueryWebClientRequestModel;
+import com.microservices.elastic.query.web.client.common.model.ElasticQueryWebClientResponseModel;
 import com.microservices.elastic.query.web.client.service.ElasticQueryWebClient;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
