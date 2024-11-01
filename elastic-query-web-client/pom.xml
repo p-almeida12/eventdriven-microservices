@@ -20,6 +20,10 @@
     <dependencies>
         <dependency>
             <groupId>com.microservices</groupId>
+            <artifactId>elastic-query-web-client-common</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.microservices</groupId>
             <artifactId>app-config-data</artifactId>
         </dependency>
         <dependency>
