@@ -40,4 +40,9 @@ http://localhost:8183/elastic-query-service/swagger-ui/index.html?configUrl=/ela
 docker-compose -f common.yml -f elastic_cluster.yml up
 ```
 
+## START KEYCLOAK AUTHORIZATION SERVER
+```shell
+docker-compose -f keycloak_authorization_server.yml up
+```
+
 
