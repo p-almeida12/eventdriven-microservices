@@ -13,6 +13,8 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PostAuthorize;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -22,6 +24,7 @@ import java.util.List;
 @Slf4j
 @RestController
 @RequiredArgsConstructor
+@PreAuthorize("isAuthenticated()")
 @RequestMapping(value = "/documents", produces = "application/vnd.api.v1+json")
 public class ElasticDocumentController {
 
@@ -41,6 +44,7 @@ public class ElasticDocumentController {
             @ApiResponse(responseCode = "500", description = "Internal server error.")
     })
     @GetMapping
+    @PostAuthorize("hasPermission(returnObject, 'READ')")
     public ResponseEntity<List<ElasticQueryServiceResponseModel>> getAllDocuments() {
         List<ElasticQueryServiceResponseModel> response = elasticQueryService.getAll();
         log.info("Elasticsearch returned {} of documents on port {}", response.size(), port);
@@ -58,6 +62,7 @@ public class ElasticDocumentController {
             @ApiResponse(responseCode = "500", description = "Internal server error.")
     })
     @GetMapping("/{id}")
+    @PreAuthorize("hasPermission(#id, 'ElasticQueryServiceResponseModel','READ')")
     public ResponseEntity<ElasticQueryServiceResponseModel> getDocumentById(@PathVariable @NotEmpty String id) {
         ElasticQueryServiceResponseModel elasticQueryServiceResponseModel = elasticQueryService.getById(id);
         log.debug("Elasticsearch returned document with id {} on port {}", id, port);
@@ -93,6 +98,8 @@ public class ElasticDocumentController {
             @ApiResponse(responseCode = "500", description = "Internal server error.")
     })
     @PostMapping("/get-document-by-text")
+    @PostAuthorize("hasPermission(returnObject, 'READ')")
+    @PreAuthorize("hasRole('APP_USER_ROLE') || hasRole('APP_SUPER_USER_ROLE') || hasAuthority('SCOPE_APP_USER_ROLE')")
     public ResponseEntity<List<ElasticQueryServiceResponseModel>> getDocumentByText(@RequestBody @Valid ElasticQueryServiceRequestModel elasticQueryServiceRequestModel) {
         List<ElasticQueryServiceResponseModel> response = elasticQueryService.getByText(elasticQueryServiceRequestModel.getText());
         log.info("Elasticsearch returned {} of documents when searching by text on port {}", response.size(), port);

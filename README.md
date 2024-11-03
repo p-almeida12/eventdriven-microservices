@@ -45,4 +45,7 @@ docker-compose -f common.yml -f elastic_cluster.yml up
 docker-compose -f keycloak_authorization_server.yml up
 ```
 
-
+## GET TOKEN FROM KEYCLOAK
+```shell
+curl -X POST -d 'grant_type=password&username=app_user&password=app_user&client_id=elastic-query-web-client&client_secret=834ec069-a703-4f62-8912-47e17ba1e553' http://localhost:9091/auth/realms/microservices-realm/protocol/openid-connect/token
+```
