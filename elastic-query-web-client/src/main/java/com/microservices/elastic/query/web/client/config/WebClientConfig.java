@@ -1,11 +1,9 @@
 package com.microservices.elastic.query.web.client.config;
 
 import com.microservices.config.ElasticQueryWebClientConfigData;
-import com.microservices.config.UserConfigData;
 import io.netty.channel.ChannelOption;
 import io.netty.handler.timeout.ReadTimeoutHandler;
 import io.netty.handler.timeout.WriteTimeoutHandler;
-import lombok.RequiredArgsConstructor;
 import org.apache.http.HttpHeaders;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;

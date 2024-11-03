@@ -11,11 +11,3 @@ spring:
       uri: http://localhost:8888
       username: spring_cloud_user
       password: '{cipher}e1a02d66d1b9329d216faf73c3955f0fcbc27fc742402eafe72a68e90b45d5e6'
-
-elastic-query-web-client:
-  webclient:
-    instances:
-      -
-        id: elastic-query-service-1
-        host: localhost
-        port: 8183

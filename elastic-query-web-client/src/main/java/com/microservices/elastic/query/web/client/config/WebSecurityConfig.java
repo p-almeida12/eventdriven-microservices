@@ -59,7 +59,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     private GrantedAuthoritiesMapper userAuthoritiesMapper() {
-        return (authorities) -> {
+        return authorities -> {
             Set<GrantedAuthority> mappedAuthorities = new HashSet<>();
 
             authorities.forEach(
