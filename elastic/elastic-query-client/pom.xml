@@ -35,7 +35,6 @@
             <groupId>com.microservices</groupId>
             <artifactId>elastic-model</artifactId>
         </dependency>
-
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
