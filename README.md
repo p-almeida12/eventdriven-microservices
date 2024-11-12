@@ -51,6 +51,19 @@ curl -X POST -d 'grant_type=password&username=app_user&password=app_user&client_
 
 # ABOUT THE REPOSITORY
 
+In this repository we have a project that uses event-driven microservices. As a sum of what is addressed in this project:
+- Development of event-driven microservices with Apache Kafka.
+- Basics of Kafka brokers, topics, partitions, producers, consumers, admin client, avro serialization, zookeper and schema registry.
+- Implement CQRS pattern with Kafka and Elastic Search.
+- Client side load balancing with Spring Cloud Load Balancer.
+- Basic Authentication and Authorization with Spring Security Oauth 2.0 and OpenID connect protocols with Keycloak using JWT.
+- Containerization of microservices using Docker and Docker Compose with the usage of spring boot maven plugin to create the images.
+- Basic elastic search , index api and query api usage, with Spring Data Elastic Search.
+- Implemented externalized configuration pattern with Spring Cloud Config.
+- API versioning.
+- Hateoas in REST APIs with Spring HATEOAS.
+
+
 ## KAFKA
 
 In this project kafka is the event store, where it will hold the tweets in form of events. 
